@@ -39,6 +39,22 @@
         This file contains styles specific for this example presentation. 
     -->
 	<link href="css/classic-slides.css" rel="stylesheet" />
+	<style>
+		table {
+			table-layout: fixed;
+			margin-left: -10%;
+		}
+		
+		td {
+			text-align: right;
+			width: 20%;
+		}
+		
+		.buttoned {
+			text-align: right;
+			width: 5%;
+		}
+	</style>
 
 </head>
 
@@ -134,7 +150,7 @@
 		</div>
 		<div id="highlights" class="step slide  " data-rel-x="1000" data-rel-y="0">
 
-			<h2>Open Source Library </h2>
+			<h2 class="highlights-title">D3.js highlights </h2>
 
 			good:
 			<li>very popular -
@@ -156,15 +172,78 @@
 
 		</div>
 
-<div id="typical-steps" class="step slide  " data-rel-x="1000" data-rel-y="0">
+		<div id="common-layouts" class="step slide  " data-rel-x="1000" data-rel-y="0">
 
-			<h2>Typical flow </h2>
-<ol>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-</ol>
+			<h2>Common layouts</h2>
+			<table>
+				<tr>
+					<td>
+						Line
+					</td>
+					<td class="buttoned">
+						<button>Demo</button>
+					</td>
+					<td>
+						Area
+					</td>
+					<td class="buttoned">
+						<button>Demo</button>
+					</td>
+					<td>
+						Pie
+					</td>
+					<td class="buttoned">
+						<button>Demo</button>
+					</td>
+					<td>
+						Tree
+					</td>
+					<td class="buttoned">
+						<button>Demo</button>
+					</td>
+
+
+
+				</tr>
+
+
+				<tr>
+
+
+					<td>
+						Treemap
+					</td>
+
+					<td class="buttoned">
+						<button>Demo</button>
+					</td>
+					<td>
+						Pack
+					</td>
+					<td class="buttoned">
+						<button>Demo</button>
+					</td>
+					<td>
+						Force
+					</td>
+					<td class="buttoned">
+						<button>Demo</button>
+					</td>
+					<td>
+						Projections
+					</td>
+					<td class="buttoned">
+						<button>Demo</button>
+					</td>
+
+
+				</tr>
+
+
+
+			</table>
+
+
 		</div>
 
 
@@ -491,6 +570,16 @@
 -->
 	<script type="text/javascript" src="../../js/impress.js"></script>
 	<script>impress().init();</script>
+	<script>
+        var texts={
+            "highlights-title":{
+                 geo:"D3.js-ის თვისებები",
+                 eng:"D3.js highlights"
+            },
+           
+        }
+    
+    </script>
 
 </body>
 
