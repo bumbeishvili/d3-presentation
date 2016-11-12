@@ -63,7 +63,7 @@
 	<!--
     This fallback message is only visible when there is `impress-not-supported` class on body.
 -->
-	
+
 
 	<!--
     This is the core element used by impress.js: the wrapper for your presentation steps. 
@@ -100,41 +100,76 @@
         powerpoint slide show. The "slide" class is entirely optional and indeed you wouldn't use it for
         your cooler impress.js presentations.
     -->
-		<div class="step slide  " data-x="-1000" data-y="-1500">
+		<div id="welcome" class="step slide  " data-x="-1000" data-y="-1500">
 			<h1>Presenting d3.js</h1>
-            <div  style="margin-top:50px">
-			<img align="middle" style="width:700px;margin-left:5%"src="images/d3-js.png" />
-            </div>
-	
-		</div>
-
-		<div class="step slide  " data-rel-x="1000" data-rel-y="0">
-			<h1>d3.js</h1>
-			<p>some text</p>
-			<img style="display:block" src="https://d3js.org/preview.png" />
-		</div>
-
-		<div class="step slide" data-rel-x="1000" data-rel-y="0">
-			<h1>Table of Contents</h1>
-			<ul>
-				<li><a href="#step-1">A title slide</a></li>
-				<li><a href="#step-2">Table of Contents</a></li>
-				<li><a href="#step-3">Text slide</a></li>
-				<li><a href="#step-4">Bullet points</a></li>
-				<li><a href="#step-5">Blockquote &amp; image</a></li>
-				<li><a href="#step-6">More basic text styles</a></li>
-				<li><a href="#step-7">Motion effects 101</a></li>
-				<li><a href="#addons">Add-ons</a></li>
-				<li><a href="#moreinfo">More info</a></li>
-			</ul>
-
-			<div class="notes">
-				<p>Table of Contents, with links to other slides of this same presentation.</p>
-
-				<p>Note that instead of absolute positioning we use relative positioning, with the data-rel-x and data-rel-y attributes.
-					This means the step is positioned relative to the foregoing step. In other words, this is equivalent to data-x="0" data-y="-1500".</p>
+			<div style="margin-top:50px">
+				<img align="middle" style="width:700px;margin-left:5%" src="images/d3-js.png" />
 			</div>
+
 		</div>
+		<div id="creator" class="step slide  " data-rel-x="1000" data-rel-y="0">
+
+			<h2>creators</h2>
+			<div>
+				<div style="display:inline;
+                                float:left;
+                                background-repeat: no-repeat;
+                                background-position: 50%;
+                                background-size: cover;
+                                border-radius: 50%;
+                                height: 200px;
+                                width:200px;
+                                margin-top:-5%;
+                                background-image: url(images/mbostok.jpeg)">
+					<div style="display:inline;width:1500%;float:left;margin-left: 220px;">
+						<br> Mike Bostok <br> PhD at Stanford<br> former employee of "NY Times"
+					</div>
+
+				</div>
+
+			</div>
+			<div style="margin-top:30%">and other 117 contributors ... </div>
+			<div style="margin-top:3%"><img style="width:100%" src="images/contributions.png"></div>
+
+		</div>
+		<div id="highlights" class="step slide  " data-rel-x="1000" data-rel-y="0">
+
+			<h2>Open Source Library </h2>
+
+			good:
+			<li>very popular -
+				<span style="font-size:20px">More stars on github, than react, angular, jquery, linux</span>
+			</li>
+			<li>extremely flexible -
+				<span style="font-size:20px">It's easy to change something</span>
+			</li>
+			<li>very fast -
+				<span style="font-size:20px">Can work with 3-5 thousand dom elements</span>
+			</li>
+
+			<br> bad:
+			<li>learning curve -
+				<span style="font-size:20px"> After 5 months, still left many things to learn	</span></li>
+			<li>build time -
+				<span style="font-size:20px"> Takes avg. 30 m.  before we see initial result (part of whole)</span>
+			</li>
+
+		</div>
+
+<div id="typical-steps" class="step slide  " data-rel-x="1000" data-rel-y="0">
+
+			<h2>Typical flow </h2>
+<ol>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+</ol>
+		</div>
+
+
+
+
 
 		<div class="step slide">
 			<h1>A slide with text</h1>
