@@ -181,25 +181,25 @@
 						Line
 					</td>
 					<td class="buttoned">
-						<button>Demo</button>
+						<button onclick="line('#layoutExample')">Demo</button>
 					</td>
 					<td>
 						Area
 					</td>
 					<td class="buttoned">
-						<button>Demo</button>
+						<button onclick="area('#layoutExample')">Demo</button>
 					</td>
 					<td>
 						Pie
 					</td>
 					<td class="buttoned">
-						<button>Demo</button>
+						<button onclick="pie('#layoutExample')">Demo</button>
 					</td>
 					<td>
 						Tree
 					</td>
 					<td class="buttoned">
-						<button>Demo</button>
+						<button onclick="tree('#layoutExample')">Demo</button>
 					</td>
 				</tr>
 				<tr>
@@ -207,31 +207,32 @@
 						Treemap
 					</td>
 					<td class="buttoned">
-						<button>Demo</button>
+						<button onclick="treemap('#layoutExample')">Demo</button>
 					</td>
 					<td>
 						Pack
 					</td>
 					<td class="buttoned">
-						<button>Demo</button>
+						<button onclick="pack('#layoutExample')">Demo</button>
 					</td>
 					<td>
 						Force
 					</td>
 					<td class="buttoned">
-						<button>Demo</button>
+						<button onclick="force('#layoutExample')">Demo</button>
 					</td>
 					<td>
 						Projections
 					</td>
 					<td class="buttoned">
-						<button>Demo</button>
+						<button onclick="projections('#layoutExample')">Demo</button>
 					</td>
 				</tr>
 			</table>
+			<div style="height:70%" id="layoutExample"></div>
 		</div>
 
-<div id="impressive-examples" class="step slide  " data-rel-x="1000" data-rel-y="0">
+		<div id="impressive-examples" class="step slide  " data-rel-x="1000" data-rel-y="0">
 
 			<h2>impressive examples</h2>
 			<table>
@@ -597,14 +598,32 @@
 	<script type="text/javascript" src="../../extras/highlight/highlight.pack.js"></script>
 	<script type="text/javascript" src="../../extras/mermaid/mermaid.min.js"></script>
 	<script type="text/javascript" src="../../extras/markdown/markdown.js"></script>
+	<script type="text/javascript" src="../../extras/d3/d3.v3.min.js"></script>
 	<script type="text/javascript" src="../../extras/impress-console/js/impressConsole.js"></script>
-	<script type="text/javascript">
-  // For impressConsole, we unfortunately must also set the path to a mandatory css file
-  // which is relative to this html file.
-  // See https://github.com/regebro/impress-console/issues/19
-  var impressConsoleCss = '../../extras/impress-console/css/impressConsole.css';
-</script>
+	<script>
+	//For impressConsole, we unfortunately must also set the path to a mandatory css file
+				// which is relative to this html file.
+				// See https://github.com/regebro/impress-console/issues/19
+				var impressConsoleCss = '../../extras/impress-console/css/impressConsole.css';
+     </script>
 
+	<script type="text/javascript" src="demos/line.js"></script>
+	<link rel="stylesheet" href="demos/line.css">
+
+	<script type="text/javascript" src="demos/area.js"></script>
+	<link rel="stylesheet" href="demos/area.css">
+
+	<script type="text/javascript" src="demos/pie.js"></script>
+	<link rel="stylesheet" href="demos/pie.css">
+
+	<script type="text/javascript" src="demos/tree.js"></script>
+	<link rel="stylesheet" href="demos/tree.css">
+
+		<script type="text/javascript" src="demos/treemap.js"></script>
+	<link rel="stylesheet" href="demos/treemap.css">
+
+			<script type="text/javascript" src="demos/pack.js"></script>
+	<link rel="stylesheet" href="demos/pack.css">
 
 	<!--
     To make all described above really work, you need to include impress.js in the page.

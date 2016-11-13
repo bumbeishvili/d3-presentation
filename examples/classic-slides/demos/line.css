@@ -1,0 +1,16 @@
+
+
+
+.line-svg path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.line-svg .axis path,
+.line-svg .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
