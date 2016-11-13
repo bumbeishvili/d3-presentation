@@ -1,18 +1,18 @@
-#layoutExample .node {
+.treeLayout .node {
   cursor: pointer;
 }
 
-#layoutExample .node circle {
+.treeLayout .node circle {
   fill: #fff;
   stroke: steelblue;
   stroke-width: 1.5px;
 }
 
-#layoutExample .node text {
+.treeLayout .node text {
   font: 10px sans-serif;
 }
 
-#layoutExample .link {
+.treeLayout .link {
   fill: none;
   stroke: #ccc;
   stroke-width: 1.5px;

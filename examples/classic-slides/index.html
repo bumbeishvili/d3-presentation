@@ -599,6 +599,7 @@
 	<script type="text/javascript" src="../../extras/mermaid/mermaid.min.js"></script>
 	<script type="text/javascript" src="../../extras/markdown/markdown.js"></script>
 	<script type="text/javascript" src="../../extras/d3/d3.v3.min.js"></script>
+		<script type="text/javascript" src="../../extras/d3/topojson.v1.min.js"></script>
 	<script type="text/javascript" src="../../extras/impress-console/js/impressConsole.js"></script>
 	<script>
 	//For impressConsole, we unfortunately must also set the path to a mandatory css file
@@ -619,11 +620,18 @@
 	<script type="text/javascript" src="demos/tree.js"></script>
 	<link rel="stylesheet" href="demos/tree.css">
 
-		<script type="text/javascript" src="demos/treemap.js"></script>
+	<script type="text/javascript" src="demos/treemap.js"></script>
 	<link rel="stylesheet" href="demos/treemap.css">
 
-			<script type="text/javascript" src="demos/pack.js"></script>
+	<script type="text/javascript" src="demos/pack.js"></script>
 	<link rel="stylesheet" href="demos/pack.css">
+
+	<script type="text/javascript" src="demos/force.js"></script>
+	<link rel="stylesheet" href="demos/force.css">
+
+	<script type="text/javascript" src="demos/projection.js"></script>
+
+
 
 	<!--
     To make all described above really work, you need to include impress.js in the page.
@@ -632,6 +640,7 @@
 -->
 	<script type="text/javascript" src="../../js/impress.js"></script>
 	<script>impress().init();</script>
+	<script>line('#layoutExample')</script>
 	<script>
         var texts={
             "highlights-title":{

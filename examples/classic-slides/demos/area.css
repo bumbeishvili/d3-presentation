@@ -1,14 +1,14 @@
-body #layoutExample{
+body .areaLayout{
   font: 10px sans-serif;
 }
 
-#layoutExample .axis path,
-#layoutExample .axis line {
+.areaLayout .axis path,
+.areaLayout .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
-#layoutExample .area {
+.areaLayout .area {
   fill: steelblue;
 }

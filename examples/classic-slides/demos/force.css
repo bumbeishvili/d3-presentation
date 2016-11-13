@@ -1,0 +1,12 @@
+.forceLayout .node {
+  opacity: 0.5;
+}
+
+.forceLayout .node:hover {
+  opacity: 1;
+}
+
+.forceLayout .link {
+  stroke: #999;
+  stroke-opacity: 0.3;
+}

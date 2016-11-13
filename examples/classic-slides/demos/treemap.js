@@ -12,7 +12,9 @@ function treemap(selector) {
         .sticky(true)
         .value(function (d) { return d.size; });
 
-    var div = d3.select(selector).append("div")
+    var div = d3.select(selector)
+        .append("div")
+        .attr('class','treemapLayout')
         .style("position", "relative")
         .style("width", (width + margin.left + margin.right) + "px")
         .style("height", (height + margin.top + margin.bottom) + "px")
