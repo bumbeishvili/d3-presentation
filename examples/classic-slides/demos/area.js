@@ -27,6 +27,7 @@ function area(selector) {
         .y1(function (d) { return y(d.close); });
 
     var svg = d3.select(selector).append("svg")
+    .attr('class','areaLayout')
       .attr('viewBox', '0 0 ' + (width + margin.left + margin.right)+ " " + (height + margin.top + margin.bottom))
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");

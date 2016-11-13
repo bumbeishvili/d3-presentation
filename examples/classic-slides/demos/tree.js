@@ -15,6 +15,7 @@ function tree(selector) {
         .projection(function (d) { return [d.y, d.x]; });
 
     var svg = d3.select(selector).append("svg")
+    .attr('class','treeLayout')
      .attr('viewBox', '0 0 ' + (width + margin.right + margin.left )+ " " + (height + margin.top + margin.bottom ))
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");

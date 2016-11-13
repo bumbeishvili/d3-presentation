@@ -40,19 +40,36 @@
     -->
 	<link href="css/classic-slides.css" rel="stylesheet" />
 	<style>
-		table {
+		#common-layouts table {
 			table-layout: fixed;
 			margin-left: -10%;
 		}
 		
-		td {
+		#common-layouts td {
 			text-align: right;
 			width: 20%;
 		}
 		
-		.buttoned {
+		#common-layouts .buttoned {
 			text-align: right;
 			width: 5%;
+		}
+		#similarities table {
+			table-layout: fixed;
+		}
+		
+		#similarities td {
+			width: 25%;
+		}
+		
+	
+		
+		.small-font {
+			font-size: 20px;
+		}
+		
+		.very-small-font {
+			font-size: 15px;
 		}
 	</style>
 
@@ -148,6 +165,46 @@
 			<div style="margin-top:3%"><img style="width:100%" src="images/contributions.png"></div>
 
 		</div>
+		<div id="similarities" class="step slide  " data-rel-x="1000" data-rel-y="0">
+
+			<h2 >Similarities </h2>
+
+			<table class="table table-hover table-striped">
+				<tr>
+					<th>action</th>
+					<th>vanilla </th>
+					<th>d3</th>
+					<th>jquery</th>
+				</tr>
+				<tr>
+					<td><span class="very-small-font">selecting element</span></td>
+					<td><pre><code>document.querySelector('#elem')</code></pre></td>
+					<td><pre><code>d3.select('#elem')</code></td>
+					<td><pre><code>$(elem)</code></td>
+				</tr>
+					<tr>
+					<td><span class="very-small-font">changing attribute</span></td>
+					<td><pre><code>el.setAttribute("width", "300px")</code></pre></td>
+					<td><pre><code>el.attr('width',300)</code></td>
+					<td><pre><code>el.attr('width',300)</code></td>
+				</tr>
+				<tr>
+					<td><span class="very-small-font">event listener</span></td>
+					<td><pre><code>el.addEventListener('click',handle)</code></pre></td>
+					<td><pre><code>el.on('click',handle);</code></td>
+					<td><pre><code>el.click(handle);</code></td>
+				</tr>
+				<tr>
+					<td><span class="very-small-font">changing content</span></td>
+					<td><pre><code>el.innerHTML="test"</code></pre></td>
+					<td><pre><code>el.html('test');</code></td>
+					<td><pre><code>el.html('test');</code></td>
+				</tr>
+			
+			</table>
+
+		</div>
+
 		<div id="highlights" class="step slide  " data-rel-x="1000" data-rel-y="0">
 
 			<h2 class="highlights-title">D3.js highlights </h2>
@@ -232,63 +289,19 @@
 			<div style="height:70%" id="layoutExample"></div>
 		</div>
 
-		<div id="impressive-examples" class="step slide  " data-rel-x="1000" data-rel-y="0">
+		<div id="building-flow" class="step slide  " data-rel-x="1000" data-rel-y="0">
 
-			<h2>impressive examples</h2>
-			<table>
-				<tr>
-					<td>
-						example 1
-					</td>
-					<td class="buttoned">
-						<button>Demo</button>
-					</td>
-					<td>
-						example 1
-					</td>
-					<td class="buttoned">
-						<button>Demo</button>
-					</td>
-					<td>
-						example 1
-					</td>
-					<td class="buttoned">
-						<button>Demo</button>
-					</td>
-					<td>
-						example 1
-					</td>
-					<td class="buttoned">
-						<button>Demo</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						example 1
-					</td>
-					<td class="buttoned">
-						<button>Demo</button>
-					</td>
-					<td>
-						example 1
-					</td>
-					<td class="buttoned">
-						<button>Demo</button>
-					</td>
-					<td>
-						example 1
-					</td>
-					<td class="buttoned">
-						<button>Demo</button>
-					</td>
-					<td>
-						example 1
-					</td>
-					<td class="buttoned">
-						<button>Demo</button>
-					</td>
-				</tr>
-			</table>
+			<h2>Basic building flow</h2>
+			<ol>
+				<li>Define static parameters - <span class="small-font">margin,padding,color,width and e.t.c</span></li>
+				<li>Calculate dynamic parameters - <span class="small-font"> center point, bar width and e.t.c.</span></li>
+				<li>Define helper functions - <span class="small-font"> scales, layouts, axes and e.t.c.</span></li>
+				<li>Drawing chart content - <span class="small-font"> main content, axes, legend end e.t.c</span></li>
+
+				<li>Add tooltip - <span class="small-font"> on click,hover,out,double click  and e.t.c.</span></li>
+
+			</ol>
+			Time Consumption chart
 		</div>
 
 
@@ -599,6 +612,7 @@
 	<script type="text/javascript" src="../../extras/mermaid/mermaid.min.js"></script>
 	<script type="text/javascript" src="../../extras/markdown/markdown.js"></script>
 	<script type="text/javascript" src="../../extras/d3/d3.v3.min.js"></script>
+	<script type="text/javascript" src="../../extras/d3/topojson.v1.min.js"></script>
 	<script type="text/javascript" src="../../extras/impress-console/js/impressConsole.js"></script>
 	<script>
 	//For impressConsole, we unfortunately must also set the path to a mandatory css file
@@ -619,11 +633,18 @@
 	<script type="text/javascript" src="demos/tree.js"></script>
 	<link rel="stylesheet" href="demos/tree.css">
 
-		<script type="text/javascript" src="demos/treemap.js"></script>
+	<script type="text/javascript" src="demos/treemap.js"></script>
 	<link rel="stylesheet" href="demos/treemap.css">
 
-			<script type="text/javascript" src="demos/pack.js"></script>
+	<script type="text/javascript" src="demos/pack.js"></script>
 	<link rel="stylesheet" href="demos/pack.css">
+
+	<script type="text/javascript" src="demos/force.js"></script>
+	<link rel="stylesheet" href="demos/force.css">
+
+	<script type="text/javascript" src="demos/projection.js"></script>
+
+
 
 	<!--
     To make all described above really work, you need to include impress.js in the page.
@@ -632,6 +653,7 @@
 -->
 	<script type="text/javascript" src="../../js/impress.js"></script>
 	<script>impress().init();</script>
+	<script>line('#layoutExample')</script>
 	<script>
         var texts={
             "highlights-title":{
