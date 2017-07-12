@@ -11,3 +11,7 @@
 ### links
 http://githut.info/  
 http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html  
+
+
+## ideas
+1. chart.js - d3.js comparison
