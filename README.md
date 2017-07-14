@@ -11,7 +11,7 @@
 ### links
 http://githut.info/  
 http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html  
-[Long Scroll](http://bl.ocks.org/jasondavies/3689677)
+[Long Scroll](http://bl.ocks.org/jasondavies/3689677)  
 [Zoom in out](https://bl.ocks.org/mbostock/34f08d5e11952a80609169b7917d4172)
 
 
