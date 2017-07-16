@@ -19,67 +19,101 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<title>Classic Slides with impress.js | Simple example impress.js slide show | by Henrik Ingo @henrikingo</title>
+  <meta charset="utf-8" />
+  <title>Classic Slides with impress.js | Simple example impress.js slide show | by Henrik Ingo @henrikingo</title>
 
-	<meta name="description" content="Simple example impress.js slide show" />
-	<meta name="author" content="Henrik Ingo" />
-	<!--        
+  <meta name="description" content="Simple example impress.js slide show" />
+  <meta name="author" content="Henrik Ingo" />
+  <!--        
         Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
         presentation to work. 
         
         However, some of the `extras/` modules do come with their own CSS, and we load
         them here. You can read about each extras module separately in their directory.
     -->
-	<link rel="stylesheet" href="../../extras/highlight/styles/github.css">
-	<link rel="stylesheet" href="../../extras/mermaid/mermaid.forest.css">
+  <link rel="stylesheet" href="../../extras/highlight/styles/github.css">
+  <link rel="stylesheet" href="../../extras/mermaid/mermaid.forest.css">
 
 
-	<!--
+  <!--
         This file contains styles specific for this example presentation. 
     -->
-	<link href="css/classic-slides.css" rel="stylesheet" />
-	<style>
-		#common-layouts table {
-			table-layout: fixed;
-			margin-left: -10%;
-		}
-		
-		#common-layouts td {
-			text-align: right;
-			width: 20%;
-		}
-		
-		#common-layouts .buttoned {
-			text-align: right;
-			width: 5%;
-		}
-		
-		#similarities table {
-			table-layout: fixed;
-		}
-		
-		#similarities td {
-			width: 25%;
-		}
-		
-		.small-font {
-			font-size: 20px;
-		}
-		
-		.very-small-font {
-			font-size: 15px;
-		}
-		
-		.chart div {
-			font: 14px sans-serif;
-			background-color: steelblue;
-			text-align: right;
-			padding: 8px;
-			margin: 5px;
-			color: white;
-		}
-	</style>
+  <link href="css/classic-slides.css" rel="stylesheet" />
+  <style>
+    #common-layouts table {
+      table-layout: fixed;
+      margin-left: -10%;
+    }
+
+    #common-layouts td {
+      text-align: right;
+      width: 20%;
+    }
+
+    #common-layouts .buttoned {
+      text-align: right;
+      width: 5%;
+    }
+
+    #similarities table {
+      table-layout: fixed;
+    }
+
+    #similarities td {
+      width: 25%;
+    }
+
+    .small-font {
+      font-size: 20px;
+    }
+
+    .very-small-font {
+      font-size: 15px;
+    }
+
+    .chart div {
+      font: 14px sans-serif;
+      background-color: steelblue;
+      text-align: right;
+      padding: 8px;
+      margin: 5px;
+      color: white;
+    }
+
+    .red {
+      color: red !important;
+    }
+
+    .green {
+      color: green !important;
+    }
+
+    .modules-table td {
+      padding-left: 30px;
+    }
+
+    #result {
+      width: 400px;
+      height: 120px;
+      background-color: rgb(215, 215, 215);
+      position: static;
+      left: 0px;
+      top: 0px;
+      display: inline-block;
+      font-size: 30px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid teal;
+      padding: 10px;
+    }
+  </style>
 
 </head>
 
@@ -101,12 +135,12 @@
 -->
 
 <body class="impress-not-supported">
-	<!--
+  <!--
     This fallback message is only visible when there is `impress-not-supported` class on body.
 -->
 
 
-	<!--
+  <!--
     This is the core element used by impress.js: the wrapper for your presentation steps. 
     In this element all the impress.js magic happens.
     
@@ -117,9 +151,10 @@
     automatically moves to next slide. It can also be set individually for each
     slide, but here we just set a common duration for all slides.
 -->
-	<div id="impress" data-transition-duration="1000" data-autoplay="0">
 
-		<!--
+  <div id="impress" data-transition-duration="1000" data-autoplay="0">
+
+    <!--
         Each step of the presentation should be an element inside the `#impress` with a class name
         of `step`. These step elements are positioned, rotated and scaled by impress.js, and
         the 'camera' shows them on each step of the presentation.
@@ -141,18 +176,23 @@
         powerpoint slide show. The "slide" class is entirely optional and indeed you wouldn't use it for
         your cooler impress.js presentations.
     -->
-		<div id="welcome" class="step slide  " data-x="-1000" data-y="-1500">
-			<h1>Presenting d3.js</h1>
-			<div style="margin-top:50px">
-				<img align="middle" style="width:700px;margin-left:5%" src="images/d3-js.png" />
-			</div>
+    <div id="welcome" class="step slide  " data-x="-1000" data-y="-1500">
+      <h1>Presenting d3.js</h1>
+      <div style="margin-top:50px">
+        <img align="middle" style="width:700px;margin-left:5%" src="images/d3-js.png" />
+      </div>
+      <div style="margin-left:35px;">
+        <h6>github.com/bumbeishvili</h6>
+        <h6>davit.bumbeishvili@gmail.com</h6>
+      </div>
 
-		</div>
-		<div id="creator" class="step slide  " data-rel-x="1000" data-rel-y="0">
 
-			<h2>creators</h2>
-			<div>
-				<div style="display:inline;
+    </div>
+    <div id="creator" class="step slide  " data-rel-x="1000" data-rel-y="0">
+
+      <h2>creators</h2>
+      <div>
+        <div style="display:inline;
                                 float:left;
                                 background-repeat: no-repeat;
                                 background-position: 50%;
@@ -162,45 +202,319 @@
                                 width:200px;
                                 margin-top:-5%;
                                 background-image: url(images/mbostok.jpeg)">
-					<div style="display:inline;width:1500%;float:left;margin-left: 220px;">
-						<br> Mike Bostok <br> PhD at Stanford<br> former employee of "NY Times"
-					</div>
+          <div style="display:inline;width:1500%;float:left;margin-left: 220px;">
+            <br> Mike Bostok <br> PhD at Stanford<br> former employee of "NY Times"
+          </div>
 
-				</div>
+        </div>
 
-			</div>
-			<div style="margin-top:30%">and other 117 contributors ... </div>
-			<div style="margin-top:3%"><img style="width:100%" src="images/contributions.png"></div>
+      </div>
+      <div style="margin-top:30%">and other 117 contributors ... </div>
+      <div style="margin-top:3%"><img style="width:100%" src="images/contributions.png"></div>
 
-		</div>
-		<div id="similarities" class="step slide  " data-rel-x="1000" data-rel-y="0">
+    </div>
 
-			<h2>Similarities </h2>
+    <div id="about-d3" class="step slide">
+      <h1>What is d3?</h1>
+      <p>
+        d3 is collection of <b><a href="https://github.com/d3/d3/blob/master/API.md#d3-api-reference" >modules</a></b> ,
+        designed to <b>work together</b>
+      </p>
 
-			<table class="table table-hover table-striped">
-				<tr>
-					<th>action</th>
-					<th>vanilla </th>
-					<th>d3</th>
-					<th>jquery</th>
-				</tr>
-				<tr>
-					<td><span class="very-small-font">selecting element</span></td>
+      good:
+      <li>very popular -
+        <span style="font-size:20px">5-th place on github</span>
+      </li>
+      <li>extremely flexible -
+        <span style="font-size:20px">It's easy to change something</span>
+      </li>
+      <li>very fast -
+        <span style="font-size:20px">Can work with 3-5 thousand dom elements</span>
+      </li>
+      <li>
+
+        D3 can be used with - Angular, React, Vue</li>
+
+      <br> bad:
+      <li>learning curve -
+        <span style="font-size:20px"> After 1 year, still left many things to learn	</span></li>
+
+
+
+
+
+    </div>
+
+
+    <div class="step slide">
+      <h3>Decomposing</h3>
+      <table>
+        <tr>
+          <th>visual</th>
+
+          <th>
+            parts
+          </th>
+          <th>
+            helpers
+          </th>
+        </tr>
+
+        <tr>
+          <td> <img style="width:100%" src="images/chartsjsd3.png"></td>
+
+          <td>
+            <button onclick="d3.select('.helper-pa').style('display','inline')">show </button>
+            <div class="helper-pa" style="display:none">
+              <ul>
+                <li>
+                  title
+                </li>
+                <li>
+                  bars
+                </li>
+                <li>
+                  grids
+                </li>
+                <li>
+                  axes
+                </li>
+
+              </ul>
+            </div>
+          </td>
+          <td>
+            <button onclick="d3.select('.helper-de').style('display','inline')">show </button>
+            <div class="helper-de" style="display:none">
+              <ul>
+                <li>
+                  scales
+                </li>
+                <li>
+                  axes
+                </li>
+                <li>
+                  colors
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+      </table>
+
+
+    </div>
+
+    <div class="step slide">
+      <h1>Differences</h1>
+      <table class="table table-striped">
+        <tr>
+          <th></th>
+
+          <th>other libraries</th>
+          <th>d3</th>
+        </tr>
+        <tr>
+          <th> helper methods</th>
+          <th> <span class='green'>yep</span></th>
+          <th> <span class='green'>yep</span> </th>
+        </tr>
+        <tr>
+          <th>middle - chart parts</th>
+          <th> <span class='green'>yep</span></th>
+          <th> <span class='red'>nope</span> </th>
+        </tr>
+        <tr>
+          <th>api - invoke</th>
+          <th> <span class='red'>nope - strict</span> </th>
+          <th> <span class='red'>nope - broad</span> </th>
+        </tr>
+      </table>
+      <button onclick="d3.select('.diff').style('display','inline')">show </button><br>
+      <div class="diff" style="display:none">
+        <span class='green'>yep </span> - already written <br>
+        <span class='red'>nope </span> - you will write it <br>
+        <span class='red'>strict </span> - structure already defined <br>
+        <span class='red'>broad </span> - you will define structure &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://bumbeishvili.github.io/chartjs-to-d3js/">  example </a>
+
+
+      </div>
+    </div>
+    <div id="common-layouts" class="step slide  " data-rel-x="1000" data-rel-y="0">
+
+      <h2>Common layouts</h2>
+      <table>
+        <tr>
+          <td>
+            Line
+          </td>
+          <td class="buttoned">
+            <button onclick="line('#layoutExample')">Demo</button>
+          </td>
+          <td>
+            Area
+          </td>
+          <td class="buttoned">
+            <button onclick="area('#layoutExample')">Demo</button>
+          </td>
+          <td>
+            Pie
+          </td>
+          <td class="buttoned">
+            <button onclick="pie('#layoutExample')">Demo</button>
+          </td>
+          <td>
+            Tree
+          </td>
+          <td class="buttoned">
+            <button onclick="tree('#layoutExample')">Demo</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Treemap
+          </td>
+          <td class="buttoned">
+            <button onclick="treemap('#layoutExample')">Demo</button>
+          </td>
+          <td>
+            Pack
+          </td>
+          <td class="buttoned">
+            <button onclick="pack('#layoutExample')">Demo</button>
+          </td>
+          <td>
+            Force
+          </td>
+          <td class="buttoned">
+            <button onclick="force('#layoutExample')">Demo</button>
+          </td>
+          <td>
+            Projections
+          </td>
+          <td class="buttoned">
+            <button onclick="projections('#layoutExample')">Demo</button>
+          </td>
+        </tr>
+      </table>
+      <div style="height:70%" id="layoutExample"></div>
+    </div>
+
+
+    <div id="d3-modules" class="step slide">
+      <h2>Modules</h2>
+
+      <h4>
+        Some of them:
+      </h4>
+      <table class="modules-table">
+
+        <tr>
+          <td>
+            Axes
+          </td>
+
+          <td>
+            Hierarchies
+          </td>
+
+          <td>
+            Shapes
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            Dragging
+          </td>
+          <td>
+            Interpolators
+          </td>
+
+          <td>
+            Transition
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Easings
+          </td>
+
+          <td>
+            Polygons
+          </td>
+
+          <td>
+            Zooming
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            Forces
+          </td>
+
+          <td>
+            Requests
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            Formats (Number, Time)
+          </td>
+
+          <td>
+            Scales
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            Geographies
+          </td>
+          <td>
+            Selections
+          </td>
+
+
+        </tr>
+      </table>
+
+
+
+    </div>
+
+    <div id="similarities" class="step slide  " data-rel-x="1000" data-rel-y="0">
+
+      <h2>Similarities </h2>
+
+      <table class="table table-hover table-striped">
+        <tr>
+          <th>action</th>
+          <th>vanilla </th>
+          <th>d3</th>
+          <th>jquery</th>
+        </tr>
+        <tr>
+          <td><span class="very-small-font">selecting element</span></td>
+          <td>
+            <pre><code>document.querySelector('#result')</code></pre>
+          </td>
+          <td>
+            <pre><code>d3.select('#result')</code></td>
 					<td>
-						<pre><code>document.querySelector('#elem')</code></pre>
-					</td>
-					<td>
-						<pre><code>d3.select('#elem')</code></td>
-					<td>
-						<pre><code>$(elem)</code></td>
+						<pre><code>$('#result')</code></td>
 				</tr>
 				<tr>
 					<td><span class="very-small-font">changing attribute</span></td>
 					<td>
 						<pre><code>el.setAttribute("width", "300px")</code></pre>
-					</td>
-					<td>
-						<pre><code>el.attr('width',300)</code></td>
+          </td>
+          <td>
+            <pre><code>el.attr('width',300)</code></td>
 					<td>
 						<pre><code>el.attr('width',300)</code></td>
 				</tr>
@@ -208,9 +522,9 @@
 					<td><span class="very-small-font">event listener</span></td>
 					<td>
 						<pre><code>el.addEventListener('click',handle)</code></pre>
-					</td>
-					<td>
-						<pre><code>el.on('click',handle);</code></td>
+          </td>
+          <td>
+            <pre><code>el.on('click',handle);</code></td>
 					<td>
 						<pre><code>el.click(handle);</code></td>
 				</tr>
@@ -218,9 +532,9 @@
 					<td><span class="very-small-font">changing content</span></td>
 					<td>
 						<pre><code>el.innerHTML="test"</code></pre>
-					</td>
-					<td>
-						<pre><code>el.html('test');</code></td>
+          </td>
+          <td>
+            <pre><code>el.html('test');</code></td>
 					<td>
 						<pre><code>el.html('test');</code></td>
 				</tr>
@@ -232,114 +546,14 @@
 
 		</div>
 
-		<div id="highlights" class="step slide  " data-rel-x="1000" data-rel-y="0">
+	
 
-			<h2 class="highlights-title">D3.js highlights </h2>
-
-			good:
-			<li>very popular -
-				<span style="font-size:20px">More stars on github, than react, angular, jquery, linux</span>
-			</li>
-			<li>extremely flexible -
-				<span style="font-size:20px">It's easy to change something</span>
-			</li>
-			<li>very fast -
-				<span style="font-size:20px">Can work with 3-5 thousand dom elements</span>
-			</li>
-
-			<br> bad:
-			<li>learning curve -
-				<span style="font-size:20px"> After 5 months, still left many things to learn	</span></li>
-			<li>build time -
-				<span style="font-size:20px"> Takes avg. 30 m.  before we see initial result (part of whole)</span>
-			</li>
-
-		</div>
-
-		<div id="common-layouts" class="step slide  " data-rel-x="1000" data-rel-y="0">
-
-			<h2>Common layouts</h2>
-			<table>
-				<tr>
-					<td>
-						Line
-					</td>
-					<td class="buttoned">
-						<button onclick="line('#layoutExample')">Demo</button>
-					</td>
-					<td>
-						Area
-					</td>
-					<td class="buttoned">
-						<button onclick="area('#layoutExample')">Demo</button>
-					</td>
-					<td>
-						Pie
-					</td>
-					<td class="buttoned">
-						<button onclick="pie('#layoutExample')">Demo</button>
-					</td>
-					<td>
-						Tree
-					</td>
-					<td class="buttoned">
-						<button onclick="tree('#layoutExample')">Demo</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Treemap
-					</td>
-					<td class="buttoned">
-						<button onclick="treemap('#layoutExample')">Demo</button>
-					</td>
-					<td>
-						Pack
-					</td>
-					<td class="buttoned">
-						<button onclick="pack('#layoutExample')">Demo</button>
-					</td>
-					<td>
-						Force
-					</td>
-					<td class="buttoned">
-						<button onclick="force('#layoutExample')">Demo</button>
-					</td>
-					<td>
-						Projections
-					</td>
-					<td class="buttoned">
-						<button onclick="projections('#layoutExample')">Demo</button>
-					</td>
-				</tr>
-			</table>
-			<div style="height:70%" id="layoutExample"></div>
-		</div>
-
-		<div id="building-flow" class="step slide  " data-rel-x="1000" data-rel-y="0">
-
-			<h2>Basic building flow</h2>
-			<div class="chart">
-				<ol>
-					<li>Define static parameters - <span class="small-font">margin,padding,color,width and e.t.c</span></li>
-					<div style="width: 40px;">5 %</div>
-					<li>Calculate dynamic parameters - <span class="small-font"> center point, bar width and e.t.c.</span></li>
-					<div style="width: 80px;">10 %</div>
-					<li>Define helper functions - <span class="small-font"> scales, layouts, axes and e.t.c.</span></li>
-					<div style="width: 80px;">10 %</div>
-					<li>Drawing chart content - <span class="small-font"> main content, axes, legend end e.t.c</span></li>
-					<div style="width: 440px;">55 %</div>
-					<li>Add tooltip - <span class="small-font"> on click,hover,out,double click  and e.t.c.</span></li>
-					<div style="width: 200px;">20 %</div>
-				</ol>
-			</div>
-		</div>
-
+	
 
 
 
 		<div class="step slide">
-			<h1>A slide with text</h1>
+			<h1>Test</h1>
 			<p>This slide has a few paragraphs <br />(p element) of normal text.</p>
 			<p>Personally I like centered or even justified text, as it looks less boring. This can of course be set in <a href="css/classic-slides.css">the css file</a>.
 				<p>I really like the style on links in these presentations. I modified the border to be beveled, but it's mostly from
@@ -478,113 +692,112 @@
                 document.head.appendChild(meta);
             }        
         </code></pre>
-			<div class="notes">
-				<p>The Highlight.js library provides really nice color coding of source code. It automatically applies to any code inside
-					a &lt;pre&gt;&lt;code&gt; element.</p>
-				<p>Highlight.js is found under the <a href="https://github.com/henrikingo/impress.js/tree/myfork/extras">extras/</a> directory,
-					since it is an independent third party plugin, not really an impress.js plugin. You have to include it via it's own
-					&lt;link&gt; and &lt;script&gt; tags.</p>
-			</div>
-		</div>
+            <div class="notes">
+              <p>The Highlight.js library provides really nice color coding of source code. It automatically applies to any
+                code inside a &lt;pre&gt;&lt;code&gt; element.</p>
+              <p>Highlight.js is found under the <a href="https://github.com/henrikingo/impress.js/tree/myfork/extras">extras/</a>                directory, since it is an independent third party plugin, not really an impress.js plugin. You have to include
+                it via it's own &lt;link&gt; and &lt;script&gt; tags.</p>
+            </div>
+    </div>
 
-		<div class="step slide" data-rel-x="-1100" data-rel-y="-300" data-rotate="210">
-			<h1>Mermaid.js</h1>
-			<div class="mermaid">
-				%% This is a comment in mermaid markup graph LR A(Support for<br />diagrams) B[Provided by<br />mermaid.js] C{Already
-				<br />know<br />mermaid?} D(
-				<a href=&quot;http://knsv.github.io/mermaid/index.html#usage&quot;>Tutorial</a>) E(Great, hope you enjoy!) A-->B B-->C
-				C--No-->D C--Yes-->E classDef startEnd fill:#fcc,stroke:#353,stroke-width:2px; class A,D,E startEnd;
-			</div>
-			<div class="notes">
-				Mermaid.js, likewise in a href="https://github.com/henrikingo/impress.js/tree/myfork/extras">extras/</a>
-				directory, draws SVG diagrams from a MarkDown-like syntax. To learn more about it <a href="http://knsv.github.io/mermaid/index.html#usage">read the fine manual</a>.
-			</div>
-		</div>
+    <div class="step slide" data-rel-x="-1100" data-rel-y="-300" data-rotate="210">
+      <h1>Mermaid.js</h1>
+      <div class="mermaid">
+        %% This is a comment in mermaid markup graph LR A(Support for<br />diagrams) B[Provided by<br />mermaid.js] C{Already
+        <br />know<br />mermaid?} D(
+        <a href=&quot;http://knsv.github.io/mermaid/index.html#usage&quot;>Tutorial</a>) E(Great, hope you enjoy!) A-->B
+        B-->C C--No-->D C--Yes-->E classDef startEnd fill:#fcc,stroke:#353,stroke-width:2px; class A,D,E startEnd;
+      </div>
+      <div class="notes">
+        Mermaid.js, likewise in a href="https://github.com/henrikingo/impress.js/tree/myfork/extras">extras/</a>
+        directory, draws SVG diagrams from a MarkDown-like syntax. To learn more about it <a href="http://knsv.github.io/mermaid/index.html#usage">read the fine manual</a>.
+      </div>
+    </div>
 
-		<div id="markdown" class="step slide markdown" data-rel-x="-800" data-rel-y="-800" data-rotate="240">
-			# Markdown.js * [Markdown.js](https://github.com/evilstreak/markdown-js) integration: for authors in a hurry! * ...or lazy
-			;-) * Jot down bullet points in *Markdown* * ...have it automatically converted to HTML * Markdown is converted into a
-			presentation client side, in the browser. This is unlike existing tools like [Hovercraft](https://github.com/regebro/hovercraft)
-			and [markdown-impress](http://binbinliao.com/markdown-impress/) where you generate a new html file on the command line.
-			* [A more advanced Markdown presentation is here.](../markdown/)
-		</div>
+    <div id="markdown" class="step slide markdown" data-rel-x="-800" data-rel-y="-800" data-rotate="240">
+      # Markdown.js * [Markdown.js](https://github.com/evilstreak/markdown-js) integration: for authors in a hurry! * ...or lazy
+      ;-) * Jot down bullet points in *Markdown* * ...have it automatically converted to HTML * Markdown is converted into
+      a presentation client side, in the browser. This is unlike existing tools like [Hovercraft](https://github.com/regebro/hovercraft)
+      and [markdown-impress](http://binbinliao.com/markdown-impress/) where you generate a new html file on the command line.
+      * [A more advanced Markdown presentation is here.](../markdown/)
+    </div>
 
-		<div id="acme" class="step slide" data-rel-x="-300" data-rel-y="-1100" data-rotate="270">
-			<ul>
-				<li>Remember, in <em>impress.js</em> the full power of HTML5, CSS3 &amp; JavaScript is always at your fingertips!</li>
-				<li>For example, you can use tables, forms, or dynamic charts as you would on any web page:</li>
-			</ul>
-			<h2>Acme Inc Quarterly Profits</h2>
+    <div id="acme" class="step slide" data-rel-x="-300" data-rel-y="-1100" data-rotate="270">
+      <ul>
+        <li>Remember, in <em>impress.js</em> the full power of HTML5, CSS3 &amp; JavaScript is always at your fingertips!</li>
+        <li>For example, you can use tables, forms, or dynamic charts as you would on any web page:</li>
+      </ul>
+      <h2>Acme Inc Quarterly Profits</h2>
 
-			<!-- Improvised bar graph of divs, to avoid copying something like NVD3 into the repo. -->
-			<div id="acme-graph">
-				<div id="acme-graph-bars">
-					<div id="acme-graph-q1"></div>
-					<div id="acme-graph-q2"></div>
-					<div id="acme-graph-q3"></div>
-					<div id="acme-graph-q4"></div>
-				</div>
-				<div id="acme-graph-bottom"></div>
-			</div>
+      <!-- Improvised bar graph of divs, to avoid copying something like NVD3 into the repo. -->
+      <div id="acme-graph">
+        <div id="acme-graph-bars">
+          <div id="acme-graph-q1"></div>
+          <div id="acme-graph-q2"></div>
+          <div id="acme-graph-q3"></div>
+          <div id="acme-graph-q4"></div>
+        </div>
+        <div id="acme-graph-bottom"></div>
+      </div>
 
-			<table border="1">
-				<tr>
-					<td>Q1</td>
-					<td id="acme-q1">234€</td>
-				</tr>
-				<tr>
-					<td>Q2</td>
-					<td id="acme-q2">255€</td>
-				</tr>
-				<tr>
-					<td>Q3</td>
-					<td><input id="acme-q3" size="5" oninput="acmeDrawGraph();" />€ <small>(insert here)</small></td>
-				</tr>
-				<tr>
-					<td>Q4</td>
-					<td><input id="acme-q4" size="5" oninput="acmeDrawGraph();" />€</td>
-				</tr>
-			</table>
-			<div class="notes">
-			</div>
-		</div>
-		<script type="text/javascript">
-        var acmeDrawGraph = function() {
-            var profits = {};
-            
-            // Q1-Q2: get innerHTML, remove €
-            var value = document.getElementById('acme-q1').innerHTML;
-            if( value[value.length-1] == "€" ) value = value.substring(0, value.length-1);
-            profits['q1'] = value;
-            var value = document.getElementById('acme-q2').innerHTML;
-            if( value[value.length-1] == "€" ) value = value.substring(0, value.length-1);
-            profits['q2'] = value;
-            
-            // Q3-Q4: get input.value
-            profits['q3'] = document.getElementById('acme-q3').value;
-            profits['q4'] = document.getElementById('acme-q4').value;
+      <table border="1">
+        <tr>
+          <td>Q1</td>
+          <td id="acme-q1">234€</td>
+        </tr>
+        <tr>
+          <td>Q2</td>
+          <td id="acme-q2">255€</td>
+        </tr>
+        <tr>
+          <td>Q3</td>
+          <td><input id="acme-q3" size="5" oninput="acmeDrawGraph();" />€ <small>(insert here)</small></td>
+        </tr>
+        <tr>
+          <td>Q4</td>
+          <td><input id="acme-q4" size="5" oninput="acmeDrawGraph();" />€</td>
+        </tr>
+      </table>
+      <div class="notes">
+      </div>
+    </div>
+    <script type="text/javascript">
+      var acmeDrawGraph = function () {
+        var profits = {};
 
-            // Convert all to numeric value, and remember max value for scaling purposes.
-            var max = profits['q1'];
-            for ( var q in profits ) {
-                profits[q] = isNaN(profits[q]) ? 0 : Number(profits[q]);
-                if( profits[q] > max ) {
-                    max = profits[q];
-                }
-            }
-            
-            // Draw the bar graph
-            for ( var q in profits ) {
-                var h = 200 * profits[q] / max;
-                var div = document.getElementById('acme-graph-'+q);
-                div.style = 'height: ' + h + 'px';
-            }
-        };
-        // This draws the first 2 bars during page load
-        acmeDrawGraph();
+        // Q1-Q2: get innerHTML, remove €
+        var value = document.getElementById('acme-q1').innerHTML;
+        if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
+        profits['q1'] = value;
+        var value = document.getElementById('acme-q2').innerHTML;
+        if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
+        profits['q2'] = value;
+
+        // Q3-Q4: get input.value
+        profits['q3'] = document.getElementById('acme-q3').value;
+        profits['q4'] = document.getElementById('acme-q4').value;
+
+        // Convert all to numeric value, and remember max value for scaling purposes.
+        var max = profits['q1'];
+        for (var q in profits) {
+          profits[q] = isNaN(profits[q]) ? 0 : Number(profits[q]);
+          if (profits[q] > max) {
+            max = profits[q];
+          }
+        }
+
+        // Draw the bar graph
+        for (var q in profits) {
+          var h = 200 * profits[q] / max;
+          var div = document.getElementById('acme-graph-' + q);
+          div.style = 'height: ' + h + 'px';
+        }
+      };
+      // This draws the first 2 bars during page load
+      acmeDrawGraph();
     </script>
 
-		<!--
+    <!--
         Finally, the relative positioning plugin also supports values that are a multiple of the windows size.
         Add "w" or "h" to specify a multiple of window width or height, respectively.
         
@@ -592,110 +805,142 @@
         in the root div#impress element, but it is also allowed to set it for each step. Since transitioning
         to this step will rotate twice around it's axis, we give the transition a bit more time here.
     -->
-		<div id="moreinfo" class="step slide" data-rel-x="1.655w" data-rel-y="0" data-rotate="720" data-transition-duration="2000">
-			<h1>More info</h1>
-			<ul>
-				<li>Official documentation
-					<ul>
-						<li>Sorry, we're working on it. For now, please read the source code of this presentation and its css file.</li>
-					</ul>
-				</li>
-				<li><a href="https://github.com/henrikingo/impress.js/">This Impress.js fork on Github</a></li>
-				<li><a href="http://henrikingo.github.io/impress.js/">Advanced Impress.js demo</a> by <a href="http://twitter.com/bartaz">@bartaz</a>
-					<ul>
-						<li>Again, the <a href="http://github.com/henrikingo/impress.js/blob/master/index.html">html</a> and <a href="https://github.com/henrikingo/impress.js/blob/master/css/impress-demo.css">css</a>							source is well commented.</li>
-					</ul>
-				</li>
-				<li>More examples and demos <a href="https://github.com/impress/impress.js/wiki/Examples-and-demos">on the impress.js wiki</a></li>
-			</ul>
+    <div id="moreinfo" class="step slide" data-rel-x="1.655w" data-rel-y="0" data-rotate="720" data-transition-duration="2000">
+      <h1>More info</h1>
+      <ul>
+        <li>Official documentation
+          <ul>
+            <li>Sorry, we're working on it. For now, please read the source code of this presentation and its css file.</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/henrikingo/impress.js/">This Impress.js fork on Github</a></li>
+        <li><a href="http://henrikingo.github.io/impress.js/">Advanced Impress.js demo</a> by <a href="http://twitter.com/bartaz">@bartaz</a>
+          <ul>
+            <li>Again, the <a href="http://github.com/henrikingo/impress.js/blob/master/index.html">html</a> and <a href="https://github.com/henrikingo/impress.js/blob/master/css/impress-demo.css">css</a>              source is well commented.</li>
+          </ul>
+        </li>
+        <li>More examples and demos <a href="https://github.com/impress/impress.js/wiki/Examples-and-demos">on the impress.js wiki</a></li>
+      </ul>
 
-			<div class="notes">
-			</div>
-		</div>
+      <div class="notes">
+      </div>
+    </div>
 
-		<!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
+    <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
          so that it covers all the other slides you just saw. 
          It's a common way of zooming out at the end, to show the whole presentation.
          In CSS, we set pointer-events:none to make this slide non-clickable. 
          It makes a difference at least for SVG content, such as the mermaid diagram. -->
-		<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10" style="pointer-events: none;">
-		</div>
-	</div>
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10" style="pointer-events: none;">
+    </div>
+  </div>
 
-	<!--
+  <!--
     Add navigation-ui controls: back, forward and a select list.
     Add a progress indicator bar (current step / all steps)
     Add the help popup plugin
 -->
-	<div id="impress-toolbar"></div>
+  <div id="impress-toolbar"></div>
 
-	<div class="impress-progressbar">
-		<div></div>
-	</div>
-	<div class="impress-progress"></div>
+  <div class="impress-progressbar">
+    <div></div>
+  </div>
+  <div class="impress-progress"></div>
 
-	<div id="impress-help"></div>
+  <div id="impress-help"></div>
 
-	<!-- Extra modules
+  <!-- Extra modules
      Load highlight.js, mermaid.js and markdown.js from extras.
      If you're curious about details, these are initialized in src/plugins/extras/extras.js -->
-	<script type="text/javascript" src="../../extras/highlight/highlight.pack.js"></script>
-	<script type="text/javascript" src="../../extras/mermaid/mermaid.min.js"></script>
-	<script type="text/javascript" src="../../extras/markdown/markdown.js"></script>
-	<script type="text/javascript" src="../../extras/d3/d3.v3.min.js"></script>
-	<script type="text/javascript" src="../../extras/d3/topojson.v1.min.js"></script>
-	<script type="text/javascript" src="../../extras/impress-console/js/impressConsole.js"></script>
-	<script>
-	//For impressConsole, we unfortunately must also set the path to a mandatory css file
-				// which is relative to this html file.
-				// See https://github.com/regebro/impress-console/issues/19
-				var impressConsoleCss = '../../extras/impress-console/css/impressConsole.css';
-     </script>
+  <script type="text/javascript" src="../../extras/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../extras/mermaid/mermaid.min.js"></script>
+  <script type="text/javascript" src="../../extras/markdown/markdown.js"></script>
+  <script type="text/javascript" src="../../extras/d3/d3.v3.min.js"></script>
+  <script type="text/javascript" src="../../extras/d3/topojson.v1.min.js"></script>
+  <script type="text/javascript" src="../../extras/impress-console/js/impressConsole.js"></script>
+  <script>
+      //For impressConsole, we unfortunately must also set the path to a mandatory css file
+      // which is relative to this html file.
+      // See https://github.com/regebro/impress-console/issues/19
+      var impressConsoleCss = '../../extras/impress-console/css/impressConsole.css';
+  </script>
 
-	<script type="text/javascript" src="demos/line.js"></script>
-	<link rel="stylesheet" href="demos/line.css">
+  <script type="text/javascript" src="demos/line.js"></script>
+  <link rel="stylesheet" href="demos/line.css">
 
-	<script type="text/javascript" src="demos/area.js"></script>
-	<link rel="stylesheet" href="demos/area.css">
+  <script type="text/javascript" src="demos/area.js"></script>
+  <link rel="stylesheet" href="demos/area.css">
 
-	<script type="text/javascript" src="demos/pie.js"></script>
-	<link rel="stylesheet" href="demos/pie.css">
+  <script type="text/javascript" src="demos/pie.js"></script>
+  <link rel="stylesheet" href="demos/pie.css">
 
-	<script type="text/javascript" src="demos/tree.js"></script>
-	<link rel="stylesheet" href="demos/tree.css">
+  <script type="text/javascript" src="demos/tree.js"></script>
+  <link rel="stylesheet" href="demos/tree.css">
 
-	<script type="text/javascript" src="demos/treemap.js"></script>
-	<link rel="stylesheet" href="demos/treemap.css">
+  <script type="text/javascript" src="demos/treemap.js"></script>
+  <link rel="stylesheet" href="demos/treemap.css">
 
-	<script type="text/javascript" src="demos/pack.js"></script>
-	<link rel="stylesheet" href="demos/pack.css">
+  <script type="text/javascript" src="demos/pack.js"></script>
+  <link rel="stylesheet" href="demos/pack.css">
 
-	<script type="text/javascript" src="demos/force.js"></script>
-	<link rel="stylesheet" href="demos/force.css">
+  <script type="text/javascript" src="demos/force.js"></script>
+  <link rel="stylesheet" href="demos/force.css">
 
-	<script type="text/javascript" src="demos/projection.js"></script>
+  <script type="text/javascript" src="demos/projection.js"></script>
 
 
 
-	<!--
+  <!--
     To make all described above really work, you need to include impress.js in the page.
     You also need to call a `impress().init()` function to initialize impress.js presentation.
     And you should do it in the end of your document. 
 -->
-	<script type="text/javascript" src="../../js/impress.js"></script>
-	<script>impress().init();</script>
-	<script>line('#layoutExample')</script>
-	<script>
-        var texts={
-            "highlights-title":{
-                 geo:"D3.js-ის თვისებები",
-                 eng:"D3.js highlights"
-            },
-           
-        }
-    
-    </script>
+  <script type="text/javascript" src="../../js/impress.js"></script>
+  <script>
+      impress().init();
+  </script>
+  <script>
+    line('#layoutExample')
+  </script>
+  <script>
+    var texts = {
+      "highlights-title": {
+        geo: "D3.js-ის თვისებები",
+        eng: "D3.js highlights"
+      },
 
+    }
+
+
+    function output(text) {
+      d3.select('#result pre').html(text)
+    }
+
+    output.color = function (color) {
+      d3.select('#result').style('background-color', color)
+    }
+
+    function restart() {
+      d3.select('#result').html("<pre></pre>")
+      d3.select('#result').style('background-color', 'white')
+    }
+
+    function show() {
+      restart();
+    }
+    function hide() {
+
+      d3.select('#result').html("<pre></pre>")
+      d3.select('#result').style('background-color', 'rgb(215, 215, 215)')
+    }
+    setTimeout(d => {
+      console.log('output("test")')
+      console.log('output.color("yellow")')
+    }, 1000)
+  </script>
+  <div id="result">
+    <pre></pre>
+  </div>
 </body>
 
 </html>
