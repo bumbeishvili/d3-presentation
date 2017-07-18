@@ -427,7 +427,7 @@
             };
 
             //Open speaker console when they press 'p'
-            registerKeyEvent([80], open, window);
+            // registerKeyEvent([80], open, window);
         };
 
         // Return the object
