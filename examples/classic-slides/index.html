@@ -50,33 +50,33 @@
       table-layout: fixed;
       margin-left: -10%;
     }
-
+    
     #common-layouts td {
       text-align: right;
       width: 20%;
     }
-
+    
     #common-layouts .buttoned {
       text-align: right;
       width: 5%;
     }
-
+    
     #similarities table {
       table-layout: fixed;
     }
-
+    
     #similarities td {
       width: 25%;
     }
-
+    
     .small-font {
       font-size: 20px;
     }
-
+    
     .very-small-font {
       font-size: 15px;
     }
-
+    
     .chart div {
       font: 14px sans-serif;
       background-color: steelblue;
@@ -85,19 +85,19 @@
       margin: 5px;
       color: white;
     }
-
+    
     .red {
       color: red !important;
     }
-
+    
     .green {
       color: green !important;
     }
-
+    
     .modules-table td {
       padding-left: 30px;
     }
-
+    
     #result {
       width: 400px;
       height: 120px;
@@ -108,32 +108,38 @@
       display: inline-block;
       font-size: 30px;
     }
-
+    
     table {
       border-collapse: collapse;
     }
-
+    
     table,
     th,
     td {
       border: 1px solid teal;
       padding: 10px;
     }
-
+    
     #common-layouts td,
     #common-layouts table {
       border: none;
       padding-bottom: 0px;
       padding-top: 0px;
     }
-
+    
     .CodeMirror {
       height: auto !important;
     }
-
-    .CodeMirror{
-      background-color:#FAFAFA;
-      cursor:move;
+    
+    .CodeMirror {
+      background-color: #FAFAFA;
+      cursor: move;
+    }
+    
+    .CodeMirror {
+      -moz-box-shadow: inset 0 0 10px #000000;
+      -webkit-box-shadow: inset 0 0 10px #000000;
+      box-shadow: inset 0 0 10px #000000;
     }
   </style>
   <script>
@@ -399,6 +405,7 @@
     <div id="common-layouts" class="step slide  " data-rel-x="1000" data-rel-y="0">
 
       <h2>Common layouts</h2>
+      <button onclick="d3=null;loadjscssfile('https://bumbeishvili.github.io/chartjs-to-d3js/libs/d3.min.js','js')" > load d3.v3 </button>
       <table>
         <tr>
           <td>
@@ -608,6 +615,7 @@
 
     <div class="step slide">
       <h1>Requests</h1>
+      <button onclick="d3=null;loadjscssfile('https://d3js.org/d3.v4.min.js','js')" > load d3.v4 </button>
       <code>d3.csv, d3.json, d3.tsv</code>
 
       <div class="requests"> </div>
@@ -998,6 +1006,22 @@ d3.csv('data/ages.csv',result => {
       console.log('output("test")')
       console.log('output.color("yellow")')
     }, 1000)
+
+
+    function loadjscssfile(filename, filetype){
+        if (filetype=="js"){ //if filename is a external JavaScript file
+            var fileref=document.createElement('script')
+            fileref.setAttribute("type","text/javascript")
+            fileref.setAttribute("src", filename)
+        }
+        else if (filetype=="css"){ //if filename is an external CSS file
+            var fileref=document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", filename)
+        }
+        if (typeof fileref!="undefined")   document.getElementsByTagName("head")[0].appendChild(fileref)
+    }
   </script>
   <div id="result">
     <pre></pre>
