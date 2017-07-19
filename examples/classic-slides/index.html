@@ -131,9 +131,15 @@
       height: auto !important;
     }
 
-    .CodeMirror{
-      background-color:#FAFAFA;
-      cursor:move;
+    .CodeMirror {
+      background-color: #FAFAFA;
+      cursor: move;
+    }
+
+    .CodeMirror {
+      -moz-box-shadow: inset 0 0 10px #000000;
+      -webkit-box-shadow: inset 0 0 10px #000000;
+      box-shadow: inset 0 0 10px #000000;
     }
   </style>
   <script>
@@ -148,7 +154,7 @@
         mode: "javascript"
       });
 
-      codeMirrors[key].setSize(null,300)
+      codeMirrors[key].setSize(null, 300)
     }
   </script>
 
@@ -399,6 +405,7 @@
     <div id="common-layouts" class="step slide  " data-rel-x="1000" data-rel-y="0">
 
       <h2>Common layouts</h2>
+      <button onclick="d3=null;loadjscssfile('https://bumbeishvili.github.io/chartjs-to-d3js/libs/d3.min.js','js')"> load d3.v3 </button>
       <table>
         <tr>
           <td>
@@ -608,19 +615,22 @@
 
     <div class="step slide">
       <h1>Requests</h1>
-      <code>d3.csv, d3.json, d3.tsv</code>
+
+      <a target="_blank" href="data/ages.csv">ages</a>
+      <a target="_blank" href="https://github.com/bumbeishvili/awesome-georgian-datasets/blob/master/data/maps/districtsAndCities/districts.csv">districts</a>
 
       <div class="requests"> </div>
+
       <button onclick="run('requests')">Run </button>
-      <a targer="_blank" href="data/ages.csv">link to csv</a>
-      <a targer="_blank" href="https://github.com/bumbeishvili/awesome-georgian-datasets/blob/master/data/maps/districtsAndCities/districts.csv">link to districts</a>
+      <button onclick="d3=null;loadjscssfile('https://d3js.org/d3.v4.min.js','js')"> load d3.v4 </button>
+
       <div class="fixed requests-result"> </div>
       <script>
         createCodeMirror('requests',
           `
-d3.csv('data/ages.csv',result => {
-  log(result);
-}) `)
+d3.csv
+d3.json
+`)
       </script>
       <script>
         function run(key) {
@@ -998,6 +1008,22 @@ d3.csv('data/ages.csv',result => {
       console.log('output("test")')
       console.log('output.color("yellow")')
     }, 1000)
+
+
+    function loadjscssfile(filename, filetype) {
+      if (filetype == "js") { //if filename is a external JavaScript file
+        var fileref = document.createElement('script')
+        fileref.setAttribute("type", "text/javascript")
+        fileref.setAttribute("src", filename)
+      }
+      else if (filetype == "css") { //if filename is an external CSS file
+        var fileref = document.createElement("link")
+        fileref.setAttribute("rel", "stylesheet")
+        fileref.setAttribute("type", "text/css")
+        fileref.setAttribute("href", filename)
+      }
+      if (typeof fileref != "undefined") document.getElementsByTagName("head")[0].appendChild(fileref)
+    }
   </script>
   <div id="result">
     <pre></pre>
