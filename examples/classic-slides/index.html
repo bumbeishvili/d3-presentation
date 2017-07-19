@@ -260,7 +260,7 @@
     <div id="about-d3" class="step slide">
       <h1>What is d3?</h1>
       <p>
-        d3 is collection of <b><a href="https://github.com/d3/d3/blob/master/API.md#d3-api-reference" >modules</a></b> ,
+        d3 is collection of <b><a href="https://github.com/d3/d3/blob/master/API.md#d3-api-reference" >js modules</a></b> ,
         designed to <b>work together</b>
       </p>
 
@@ -402,10 +402,11 @@
       <img style="width:90%" src="images/cust.png" />
     </div>
 
+
     <div id="common-layouts" class="step slide  " data-rel-x="1000" data-rel-y="0">
+      <button style="position:absolute;top:0;left:0" onclick="d3=null;loadjscssfile('https://bumbeishvili.github.io/chartjs-to-d3js/libs/d3.min.js','js')"> load d3.v3 </button>
 
       <h2>Common layouts</h2>
-      <button onclick="d3=null;loadjscssfile('https://bumbeishvili.github.io/chartjs-to-d3js/libs/d3.min.js','js')"> load d3.v3 </button>
       <table>
         <tr>
           <td>
@@ -464,85 +465,55 @@
     </div>
 
 
+    <div id="cool-examples" class="step slide  " data-rel-x="1000" data-rel-y="0">
+      <h2>Impressive Examples</h2>
+      <ul>
+        <li>
+          <a target="_blank" href="http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html">NY Times Budget Spending</a>
+        </li>
+        <li>
+          <a target="_blank" href="http://bl.ocks.org/jasondavies/3689677"> Long scroll</a>
+        </li>
+        <li>
+          <a target="_blank" href="http://githut.info/"> Githut.info</a>
+        </li>
+        <li>
+          <a target="_blank" href="http://thronesviz.github.io/"> Game Of Thrones Chord</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://ta-moon-a.github.io/Construction-Dashoard-with-d3.js/"> Linked Charts </a>
+        </li>
+        <li>
+          <a target="_blank" href="  https://d3js.org/"> Other 70 examples here</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://github.com/d3/d3/wiki/Gallery"> Other 300 +  here</a>
+        </li>
+        <li>
+          <a target="_blank" href="http://blockbuilder.org/search"> Other 25 000  here</a>
+        </li>
+
+      </ul>
+
+    </div>
+
     <div id="d3-modules" class="step slide">
       <h2>Modules</h2>
 
-      <h4>
-        Some of them:
-      </h4>
-      <table class="modules-table">
-
-        <tr>
-          <td>
-            Axes
-          </td>
-
-          <td>
-            Hierarchies
-          </td>
-
-          <td>
-            Shapes
-          </td>
-
-        </tr>
-        <tr>
-          <td>
-            Dragging
-          </td>
-          <td>
-            Interpolators
-          </td>
-
-          <td>
-            Transition
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Easings
-          </td>
-
-          <td>
-            Polygons
-          </td>
-
-          <td>
-            Zooming
-          </td>
-
-        </tr>
-        <tr>
-          <td>
-            Forces
-          </td>
-
-          <td>
-            Requests
-          </td>
-
-        </tr>
-        <tr>
-          <td>
-            Formats (Number, Time)
-          </td>
-
-          <td>
-            Scales
-          </td>
-
-        </tr>
-        <tr>
-          <td>
-            Geographies
-          </td>
-          <td>
-            Selections
-          </td>
+      d3 has following modules
+      <ul>
+        <li>Requests</li>
+        <li>Selections</li>
+        <li>Scales</li>
+        <li>Axes</li>
+        <li>
+          <a target="_blank" href="https://github.com/d3/d3/blob/master/API.md">and here is other 26   </a>
+        </li>
+      </ul>
 
 
-        </tr>
-      </table>
+
+
 
 
 
@@ -616,13 +587,13 @@
     <div class="step slide">
       <h1>Requests</h1>
 
-      <a target="_blank" href="data/ages.csv">ages</a>
-      <a target="_blank" href="https://github.com/bumbeishvili/awesome-georgian-datasets/blob/master/data/maps/districtsAndCities/districts.csv">districts</a>
+      <a target="_blank" href="https://raw.githubusercontent.com/bumbeishvili/d3-presentation/master/examples/classic-slides/data/ages.csv">ages</a>
+      <a target="_blank" href="https://raw.githubusercontent.com/bumbeishvili/awesome-georgian-datasets/master/data/maps/districtsAndCities/districts.csv">districts</a>
 
       <div class="requests"> </div>
 
       <button onclick="run('requests')">Run </button>
-      <button onclick="d3=null;loadjscssfile('https://d3js.org/d3.v4.min.js','js')"> load d3.v4 </button>
+      <button style="position:absolute;top:0;left:0" onclick="d3=null;loadjscssfile('https://d3js.org/d3.v4.min.js','js')"> load d3.v4 </button>
 
       <div class="fixed requests-result"> </div>
       <script>
@@ -802,35 +773,10 @@ d3.json
 
       <!-- Improvised bar graph of divs, to avoid copying something like NVD3 into the repo. -->
       <div id="acme-graph">
-        <div id="acme-graph-bars">
-          <div id="acme-graph-q1"></div>
-          <div id="acme-graph-q2"></div>
-          <div id="acme-graph-q3"></div>
-          <div id="acme-graph-q4"></div>
-        </div>
-        <div id="acme-graph-bottom"></div>
+        tes
       </div>
 
-      <table border="1">
-        <tr>
-          <td>Q1</td>
-          <td id="acme-q1">234€</td>
-        </tr>
-        <tr>
-          <td>Q2</td>
-          <td id="acme-q2">255€</td>
-        </tr>
-        <tr>
-          <td>Q3</td>
-          <td><input id="acme-q3" size="5" oninput="acmeDrawGraph();" />€ <small>(insert here)</small></td>
-        </tr>
-        <tr>
-          <td>Q4</td>
-          <td><input id="acme-q4" size="5" oninput="acmeDrawGraph();" />€</td>
-        </tr>
-      </table>
-      <div class="notes">
-      </div>
+
     </div>
     <script type="text/javascript">
         var acmeDrawGraph = function () {
@@ -877,24 +823,8 @@ d3.json
         to this step will rotate twice around it's axis, we give the transition a bit more time here.
     -->
     <div id="moreinfo" class="step slide" data-rel-x="1.655w" data-rel-y="0" data-rotate="720" data-transition-duration="2000">
-      <h1>More info</h1>
-      <ul>
-        <li>Official documentation
-          <ul>
-            <li>Sorry, we're working on it. For now, please read the source code of this presentation and its css file.</li>
-          </ul>
-        </li>
-        <li><a href="https://github.com/henrikingo/impress.js/">This Impress.js fork on Github</a></li>
-        <li><a href="http://henrikingo.github.io/impress.js/">Advanced Impress.js demo</a> by <a href="http://twitter.com/bartaz">@bartaz</a>
-          <ul>
-            <li>Again, the <a href="http://github.com/henrikingo/impress.js/blob/master/index.html">html</a> and <a href="https://github.com/henrikingo/impress.js/blob/master/css/impress-demo.css">css</a>              source is well commented.</li>
-          </ul>
-        </li>
-        <li>More examples and demos <a href="https://github.com/impress/impress.js/wiki/Examples-and-demos">on the impress.js wiki</a></li>
-      </ul>
+      <h1> Thanks</h1>
 
-      <div class="notes">
-      </div>
     </div>
 
     <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
