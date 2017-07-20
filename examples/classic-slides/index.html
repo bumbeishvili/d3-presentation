@@ -657,7 +657,7 @@ d3.csv('data/ages.csv',result=>{
         element should be rotated by 30 degrees clockwise.        
     -->
     <div id="Selections" class="step slide" data-rel-x="1100" data-rel-y="300" data-rotate="30">
-    
+
       <h1>Selections</h1>
 
       <div class="rect">.rect</div>
@@ -695,7 +695,7 @@ d3.selectAll('.rect')
     </div>
 
     <div id="scales" class="step slide" data-rel-x="800" data-rel-y="800" data-rotate="60">
-     
+
       <h1>Scales</h1>
       <img style="position:absolute;top:0" src="images/scales.png"></img>
       <br>
@@ -724,36 +724,41 @@ log(result);`
       </script>
     </div>
 
-    <div class="step slide" data-rel-x="300" data-rel-y="1100" data-rotate="90">
-      <h1>Motion effects 101</h1>
-      <p>Items on the slide can</p>
-      <p class="fly-in fly-out">Fly in</p>
-      <p class="fade-in fade-out" style="transition-delay: 2s">Fade in</p>
-      <p class="zoom-in zoom-out" style="transition-delay: 4s">And zoom in</p>
+    <div id='axes' class="step slide" data-rel-x="300" data-rel-y="1100" data-rotate="90">
+      <h1>Axes</h1>
 
-      <p class="left bottom"><small>...just like in PowerPoint. Yeah, I know I'm being lame, but it was fun to learn to do this in CSS3.</small></p>
-
-      <div class="notes">
-        <p>This step here doesn't introduce anything new when it comes to data attributes, but you should notice in the demo
-          that some words of this text are being animated. It's a very basic CSS transition that is applied to the elements
-          when this step element is reached.
-        </p>
-        <p>
-          At the very beginning of the presentation all step elements are given the class of `future`. It means that they haven't been
-          visited yet.
-        </p>
-        <p>
-          When the presentation moves to given step `future` is changed to `present` class name. That's how animation on this step
-          works - text moves when the step has `present` class.
-        </p>
-        <p>
-          Finally when the step is left the `present` class is removed from the element and `past` class is added.
-        </p>
-        <p>
-          So basically every step element has one of three classes: `future`, `present` and `past`. Only one current step has the `present`
-          class.
-        </p>
+      <div>
+        <svg class="axes-svg" style="overflow:visible">
+          <text>I am svg with class 'axes-svg'</text>
+        </svg>
       </div>
+
+      <div class="axes"> </div>
+
+
+      <button onclick="run('axes')">Run </button>
+      <button onclick="showExample('axes',axesExample)">Example </button>
+
+      <div class="fixed axes-result"> </div>
+      <script>
+        createCodeMirror('axes',
+          `
+d3.axisLeft
+d3.axisBottom
+`)
+
+
+
+        function axesExample() {
+          return `var scale = d3.scaleLinear()
+   .domain([1,100])
+   .range([1,300])
+var axis = d3.axisBottom(scale);
+d3.select('.axes-svg').call(axis)
+`
+
+        }
+      </script>
     </div>
 
     <div id="addons" class="step slide title" data-rel-x="-300" data-rel-y="1100" data-rotate="120">
@@ -846,39 +851,39 @@ log(result);`
 
     </div>
     <script type="text/javascript">
-      var acmeDrawGraph = function () {
-        var profits = {};
+        var acmeDrawGraph = function () {
+          var profits = {};
 
-        // Q1-Q2: get innerHTML, remove €
-        var value = document.getElementById('acme-q1').innerHTML;
-        if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
-        profits['q1'] = value;
-        var value = document.getElementById('acme-q2').innerHTML;
-        if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
-        profits['q2'] = value;
+          // Q1-Q2: get innerHTML, remove €
+          var value = document.getElementById('acme-q1').innerHTML;
+          if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
+          profits['q1'] = value;
+          var value = document.getElementById('acme-q2').innerHTML;
+          if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
+          profits['q2'] = value;
 
-        // Q3-Q4: get input.value
-        profits['q3'] = document.getElementById('acme-q3').value;
-        profits['q4'] = document.getElementById('acme-q4').value;
+          // Q3-Q4: get input.value
+          profits['q3'] = document.getElementById('acme-q3').value;
+          profits['q4'] = document.getElementById('acme-q4').value;
 
-        // Convert all to numeric value, and remember max value for scaling purposes.
-        var max = profits['q1'];
-        for (var q in profits) {
-          profits[q] = isNaN(profits[q]) ? 0 : Number(profits[q]);
-          if (profits[q] > max) {
-            max = profits[q];
+          // Convert all to numeric value, and remember max value for scaling purposes.
+          var max = profits['q1'];
+          for (var q in profits) {
+            profits[q] = isNaN(profits[q]) ? 0 : Number(profits[q]);
+            if (profits[q] > max) {
+              max = profits[q];
+            }
           }
-        }
 
-        // Draw the bar graph
-        for (var q in profits) {
-          var h = 200 * profits[q] / max;
-          var div = document.getElementById('acme-graph-' + q);
-          div.style = 'height: ' + h + 'px';
-        }
-      };
-      // This draws the first 2 bars during page load
-      acmeDrawGraph();
+          // Draw the bar graph
+          for (var q in profits) {
+            var h = 200 * profits[q] / max;
+            var div = document.getElementById('acme-graph-' + q);
+            div.style = 'height: ' + h + 'px';
+          }
+        };
+        // This draws the first 2 bars during page load
+        acmeDrawGraph();
     </script>
 
     <!--
