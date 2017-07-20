@@ -141,6 +141,16 @@
       -webkit-box-shadow: inset 0 0 10px #000000;
       box-shadow: inset 0 0 10px #000000;
     }
+
+    .rect {
+      width: 100px;
+      height: 100px;
+      background-color: teal;
+      display: inline-block;
+      color: white;
+      margin-bottom: 10px;
+      ;
+    }
   </style>
   <script>
     var codeMirrors = {};
@@ -260,8 +270,7 @@
     <div id="about-d3" class="step slide">
       <h1>What is d3?</h1>
       <p>
-        d3 is collection of <b><a href="https://github.com/d3/d3/blob/master/API.md#d3-api-reference" >js modules</a></b> ,
-        designed to <b>work together</b>
+        d3 is collection of <b><a href="https://github.com/d3/d3/blob/master/API.md#d3-api-reference" >js modules</a></b>        , designed to <b>work together</b>
       </p>
 
       good:
@@ -596,7 +605,8 @@
       <div class="requests"> </div>
 
       <button onclick="run('requests')">Run </button>
-      <button style="position:absolute;top:0;left:0" onclick="d3=null;loadjscssfile('https://d3js.org/d3.v4.min.js','js')"> load d3.v4 </button>
+      <button onclick="showExample('requests',requestExample)">Example </button>
+
 
       <div class="fixed requests-result"> </div>
       <script>
@@ -607,6 +617,19 @@ d3.json
 `)
       </script>
       <script>
+        function requestExample() {
+          return `
+d3.csv('data/ages.csv',result=>{
+  log(result);
+})
+          `
+        }
+        function showExample(key, valueFunc) {
+
+          var mirror = codeMirrors[key];
+          var value = valueFunc();
+          mirror.setValue(value);
+        }
         function run(key) {
           var mirror = codeMirrors[key];
           var value = mirror.getValue();
@@ -633,31 +656,72 @@ d3.json
         Notation shouldn't be a surprise. We use `data-rotate="30"` attribute, meaning that this
         element should be rotated by 30 degrees clockwise.        
     -->
-    <div class="step slide" data-rel-x="1100" data-rel-y="300" data-rotate="30">
-      <h1>A blockquote &amp; image</h1>
-      <img src="images/3476636111_c551295ca4_b.jpg" alt="Mother Teresa holding a newborn baby" class="right" />
-      <blockquote>
-        Spread love everywhere you go. <br />Let no one ever come to you without leaving happier.
-        <p style="text-align: right">Mother Teresa</p>
-        <p class="left bottom"><small>Image credit: <a href="https://www.flickr.com/photos/peta-de-aztlan/3476636111/">Peta_de_Aztlan</a>@Flickr. CC-BY 2.0</small></p>
-      </blockquote>
+    <div id="Selections" class="step slide" data-rel-x="1100" data-rel-y="300" data-rotate="30">
+    
+      <h1>Selections</h1>
 
-      <div class="notes">
-      </div>
+      <div class="rect">.rect</div>
+      <div class="rect">.rect</div>
+      <div class="rect">.rect</div>
+      <div class="rect">.rect</div>
+
+
+
+      <div class="selections"> </div>
+
+
+      <button onclick="run('selections')">Run </button>
+      <button onclick="showExample('selections',selectionsExample)">Example </button>
+
+      <div class="fixed selections-result"> </div>
+      <script>
+        createCodeMirror('selections',
+          `
+d3.select
+d3.selectAll
+d3.append
+`)
+
+        function selectionsExample() {
+          return `
+d3.selectAll('.rect')
+  .data([1,2,3,4])
+  .style('width',d=>d*70+'px')
+  .style('background-color','aquamarine')
+  .append('p')
+  .html(d=>d)  `
+        }
+      </script>
     </div>
 
-    <div class="step slide" data-rel-x="800" data-rel-y="800" data-rotate="60">
-      <h1>More text styles</h1>
-      <p>As usual, use <em>em</em> to emphasize, <br />
-        <strong>strong</strong> for strong,
-        <u>u</u> for underline,<br />
-        <strike>strike</strike> for strikethrough and <q>q for inline quotations</q>.</p>
+    <div id="scales" class="step slide" data-rel-x="800" data-rel-y="800" data-rotate="60">
+     
+      <h1>Scales</h1>
+      <img style="position:absolute;top:0" src="images/scales.png"></img>
+      <br>
+      <br>
+      <br>
+      <div class="scales"> </div>
 
-      <p>If you're a software engineer like me, you will often use the
-        <code>&lt;code&gt;</code> tag for monospaced inline text.</p>
+      <button onclick="run('scales')">Run </button>
+      <button onclick="showExample('scales',scalesExample)">Example </button>
 
-      <div class="notes">
-      </div>
+      <div class="fixed scales-result"> </div>
+      <script>
+        createCodeMirror('scales',
+          `
+d3.scaleLinear
+`)
+
+        function scalesExample() {
+          return `var scale = d3.scaleLinear()
+   .domain([1,10])
+   .range([1,100]) 
+var result = scale(5)
+log(result);`
+
+        }
+      </script>
     </div>
 
     <div class="step slide" data-rel-x="300" data-rel-y="1100" data-rotate="90">
@@ -782,39 +846,39 @@ d3.json
 
     </div>
     <script type="text/javascript">
-        var acmeDrawGraph = function () {
-          var profits = {};
+      var acmeDrawGraph = function () {
+        var profits = {};
 
-          // Q1-Q2: get innerHTML, remove €
-          var value = document.getElementById('acme-q1').innerHTML;
-          if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
-          profits['q1'] = value;
-          var value = document.getElementById('acme-q2').innerHTML;
-          if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
-          profits['q2'] = value;
+        // Q1-Q2: get innerHTML, remove €
+        var value = document.getElementById('acme-q1').innerHTML;
+        if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
+        profits['q1'] = value;
+        var value = document.getElementById('acme-q2').innerHTML;
+        if (value[value.length - 1] == "€") value = value.substring(0, value.length - 1);
+        profits['q2'] = value;
 
-          // Q3-Q4: get input.value
-          profits['q3'] = document.getElementById('acme-q3').value;
-          profits['q4'] = document.getElementById('acme-q4').value;
+        // Q3-Q4: get input.value
+        profits['q3'] = document.getElementById('acme-q3').value;
+        profits['q4'] = document.getElementById('acme-q4').value;
 
-          // Convert all to numeric value, and remember max value for scaling purposes.
-          var max = profits['q1'];
-          for (var q in profits) {
-            profits[q] = isNaN(profits[q]) ? 0 : Number(profits[q]);
-            if (profits[q] > max) {
-              max = profits[q];
-            }
+        // Convert all to numeric value, and remember max value for scaling purposes.
+        var max = profits['q1'];
+        for (var q in profits) {
+          profits[q] = isNaN(profits[q]) ? 0 : Number(profits[q]);
+          if (profits[q] > max) {
+            max = profits[q];
           }
+        }
 
-          // Draw the bar graph
-          for (var q in profits) {
-            var h = 200 * profits[q] / max;
-            var div = document.getElementById('acme-graph-' + q);
-            div.style = 'height: ' + h + 'px';
-          }
-        };
-        // This draws the first 2 bars during page load
-        acmeDrawGraph();
+        // Draw the bar graph
+        for (var q in profits) {
+          var h = 200 * profits[q] / max;
+          var div = document.getElementById('acme-graph-' + q);
+          div.style = 'height: ' + h + 'px';
+        }
+      };
+      // This draws the first 2 bars during page load
+      acmeDrawGraph();
     </script>
 
     <!--
@@ -942,6 +1006,8 @@ d3.json
       console.log('output.color("yellow")')
     }, 1000)
 
+    d3 = null;
+    loadjscssfile('https://d3js.org/d3.v4.min.js', 'js')
 
     function loadjscssfile(filename, filetype) {
       if (filetype == "js") { //if filename is a external JavaScript file
