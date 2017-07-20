@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <title>CodePen - geolab-d3</title>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</head>
+
+<body translate="no" >
+
+  
+  
+  <script src='https://d3js.org/d3.v4.min.js'></script>
+
+    <script>
+    d3.csv(
+  "https://raw.githubusercontent.com/bumbeishvili/d3-presentation/master/examples/classic-slides/data/substitutes.csv",
+  result => {
+    drawBarChartICanGiveThisFunctionAnyNameIWant(result);
+   /*
+    drawBarChartICanGiveThisFunctionAnyNameIWant([{
+      gel:10,
+      year:100
+    }, {
+      gel:20,
+      year:200
+    }])
+    */
+  }
+);
+
+function drawBarChartICanGiveThisFunctionAnyNameIWant(data) {
+  //convert data to number
+  data.forEach(d => {
+    d.year = Number(d.year);
+    d.gel = Number(d.gel);
+  });
+
+  //add svg
+  var svg = d3
+    .select("body")
+    .append("svg")
+    .style("overflow", "visible")
+    .attr("transform", "translate(100,100)");
+
+  //variables
+  var height = 300;
+  var width = 600;
+  var barSpacing = 10;
+  var maxValue = d3.max(data, d => d.gel);
+  var eachSectorWidth = width / data.length;
+  var eachBarWidth = eachSectorWidth - barSpacing;
+
+  //scale
+  var barScale = d3.scaleLinear().domain([0, maxValue]).range([0, height]);
+var reversedBarScale = d3.scaleLinear().domain([maxValue,0 ]).range([0, height]);
+  //bars
+  var bars = svg
+    .selectAll(".bars")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("width", eachBarWidth)
+    .attr("height", (d, i) => barScale(d.gel))
+    .attr("y", (d, i) => height - barScale(d.gel))
+    .attr("fill", "teal")
+    .on("mouseenter", function(d) {
+      bars.transition().attr("opacity", 0.5);
+      d3.select(this).transition().attr("opacity", "1").attr('fill','green');
+    })
+    .on("mouseleave", function(d) {
+      bars.transition().attr("opacity", 1).attr('fill','teal');
+    })
+   .attr("x", (d, i) => i * eachSectorWidth+barSpacing);
+
+  
+  // axes
+  var yAxis = d3.axisLeft(reversedBarScale)
+  var yAxis = svg.call(yAxis);
+  
+  //years
+  svg.selectAll('.years')
+  .data(data)
+  .enter()
+  .append('text')
+  .text(d=>d.year)
+  .attr('fill','black')
+  .attr('transform',(d,i)=>`translate(${i*eachSectorWidth+barSpacing+10},${height+10}) rotate(-50)`)
+}
+  </script>
+
+  
+  
+
+</body>
+</html>
+ 
