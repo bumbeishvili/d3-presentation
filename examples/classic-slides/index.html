@@ -151,6 +151,10 @@
       margin-bottom: 10px;
       ;
     }
+
+    #Steps li {
+      list-style: none
+    }
   </style>
   <script>
     var codeMirrors = {};
@@ -298,7 +302,7 @@
     </div>
 
 
-    <div class="step slide">
+    <div id="Decomposing" class="step slide">
       <h3>Decomposing</h3>
       <table>
         <tr>
@@ -358,7 +362,7 @@
 
     </div>
 
-    <div class="step slide">
+    <div id="Differences" class="step slide">
       <h1>Differences</h1>
       <table class="table table-striped">
         <tr>
@@ -405,7 +409,7 @@
       </div>
     </div>
 
-    <div class="step slide">
+    <div id="Client-Requests" class="step slide">
       <h1>Client Requests</h1>
 
       <img style="width:90%" src="images/cust.png" />
@@ -474,7 +478,7 @@
     </div>
 
 
-    <div id="cool-examples" class="step slide  " data-rel-x="1000" data-rel-y="0">
+    <div id="impressive-examples" class="step slide  " data-rel-x="1000" data-rel-y="0">
       <h2>Impressive Examples</h2>
       <ul>
         <li>
@@ -522,12 +526,6 @@
           <a target="_blank" href="https://github.com/d3/d3/blob/master/API.md">and here is other 26   </a>
         </li>
       </ul>
-
-
-
-
-
-
 
     </div>
     <!--
@@ -596,7 +594,7 @@
 
 
 
-    <div class="step slide">
+    <div id="requests" class="step slide">
       <h1>Requests</h1>
 
       <a target="_blank" href="https://raw.githubusercontent.com/bumbeishvili/d3-presentation/master/examples/classic-slides/data/ages.csv">ages</a>
@@ -772,7 +770,7 @@ d3.select('.axes-svg').call(axis)
 
     </div>
 
-    <div class="step slide" data-rel-x="-800" data-rel-y="800" data-rotate="150">
+    <div  id='svg-attributes'class="step slide" data-rel-x="-800" data-rel-y="800" data-rotate="150">
       <h1>svg attributes</h1>
       <div>
         <svg class="svg-attributes" style="overflow:visible;position:absolute;top:0">
@@ -832,7 +830,7 @@ d3.select('.axes-svg').call(axis)
 
 
 
-    <div class="step slide" data-rel-x="-1100" data-rel-y="300" data-rotate="180">
+    <div id="svg-attributes-chaining" class="step slide" data-rel-x="-1100" data-rel-y="300" data-rotate="180">
       <h1>svg attributes with chaining</h1>
       <div>
         <svg class="svg-attributes-chain" style="overflow:visible;position:absolute;top:0">
@@ -857,7 +855,7 @@ d3.select('.axes-svg').call(axis)
       </div>
     </div>
 
-    <div class="step slide" data-rel-x="-1100" data-rel-y="-300" data-rotate="210">
+    <div id="Practice" class="step slide" data-rel-x="-1100" data-rel-y="-300" data-rotate="210">
       <h1>Practice</h1>
       We are going to build <a target="_blank" href="practice/practice.html"> bar chart, </a> which visualizes subsistence
       minimum in Georgia over years
@@ -867,28 +865,36 @@ d3.select('.axes-svg').call(axis)
     <div id="Steps" class="step slide" data-rel-x="-800" data-rel-y="-800" data-rotate="240">
       <h1>Steps</h1>
       <ul>
-        <li>Go to the link - <a target="_blank" href="www.bit.ly/geolab-d3-practice"> bit.ly/geolab-d3-practice</a> and fork
-          </li>
-        <li>Fetch data using d3.csv from </li>
+        <li>
+          <input type="checkbox"> Go to the link - <a target="_blank" href="http://www.bit.ly/geolab-d3-practice"> bit.ly/geolab-d3-practice</a>          and fork
+        </li>
+        <li>
+          <input type="checkbox"> get data with d3.csv from <a target="_blank" href="http://bit.ly/geolab-d3-subsistence"> bit.ly/geolab-d3-subsistence</a>          </li>
+        <li>
+          <input type="checkbox"> convert gel to number
+        </li>
+        <li>
+          <input type="checkbox"> append svg
+        </li>
+        <li>
+          <input type="checkbox"> create scales and variables
+        </li>
+        <li>
+          <input type="checkbox"> append bars ('rects')
+        </li>
+        <li>
+          <input type="checkbox"> append axes </li>
+        <li>
+          <input type="checkbox"> react on hover
+        </li>
         <li> This slide can be found at <a target="_blank" href="http://bit.ly/geolab-d3-steps"> bit.ly/geolab-d3-steps</a> </li>
-
 
       </ul>
     </div>
 
-    <div id="acme" class="step slide" data-rel-x="-300" data-rel-y="-1100" data-rotate="270">
-      <ul>
-        <li>Remember, in <em>impress.js</em> the full power of HTML5, CSS3 &amp; JavaScript is always at your fingertips!</li>
-        <li>For example, you can use tables, forms, or dynamic charts as you would on any web page:</li>
-      </ul>
-      <h2>Acme Inc Quarterly Profits</h2>
-
-      <!-- Improvised bar graph of divs, to avoid copying something like NVD3 into the repo. -->
-      <div id="acme-graph">
-        tes
-      </div>
-
-
+    <div id="thanks" class="step slide" data-rel-x="-300" data-rel-y="-1100" data-rotate="270">
+      <h1> Thanks </h1>
+      <h4> Any questions?</h4>
     </div>
     <script type="text/javascript">
           var acmeDrawGraph = function () {
@@ -935,8 +941,14 @@ d3.select('.axes-svg').call(axis)
         to this step will rotate twice around it's axis, we give the transition a bit more time here.
     -->
     <div id="moreinfo" class="step slide" data-rel-x="1.655w" data-rel-y="0" data-rotate="720" data-transition-duration="2000">
-      <h1> Thanks</h1>
+      <h1> Links</h1>
+      <ul>
+        <li><a target="_blank" href="https://github.com/bumbeishvili/d3-presentation"> This Slides Itself - bit.ly/geolab-d3-slides</a></li>
 
+         <li><a target="_blank" href="https://www.facebook.com/groups/d3.js.georgia/">D3.js Georgia</a></li>
+
+          <li><a target="_blank" href="https://www.facebook.com/groups/DataScienceTbilisi/">Data Science Tbilisi</a></li>
+      </ul>
     </div>
 
     <!-- This last, empty "slide" is set to be very large using the data-scale attribute, 
